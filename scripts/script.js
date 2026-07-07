@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+  initI18n();
   initPreloader();
   initTypingEffect();
   initNavbar();
