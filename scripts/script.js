@@ -33,8 +33,8 @@ function initTypingEffect() {
   const phrases = [
     'Desenvolvedor Full Stack Java e C#',
     'Com experiência na criação e consumo de APIs REST',
+    'Desenvolvimento web usando React e Angular',
     'Experiência com testes unitários e automação de testes',
-    'Full Stack Developer',
   ];
 
   let phraseIndex = 0;
