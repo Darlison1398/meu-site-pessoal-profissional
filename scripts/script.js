@@ -31,9 +31,9 @@ function initTypingEffect() {
   if (!el) return;
 
   const phrases = [
-    'Desenvolvedor de Sistemas C#',
-    'Especialista em ASP.NET Core',
-    'Desenvolvedor de APIs REST',
+    'Desenvolvedor Full Stack Java e C#',
+    'Com experiência na criação e consumo de APIs REST',
+    'Experiência com testes unitários e automação de testes',
     'Full Stack Developer',
   ];
 
