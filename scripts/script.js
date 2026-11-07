@@ -37,6 +37,16 @@ function initTypingEffect() {
     'Experiência com testes unitários e automação de testes',
   ];
 
+  const sizer = document.getElementById('typed-sizer');
+  if (sizer) {
+    sizer.innerHTML = '';
+    phrases.forEach(phrase => {
+      const span = document.createElement('span');
+      span.textContent = `${phrase}|`;
+      sizer.appendChild(span);
+    });
+  }
+
   let phraseIndex = 0;
   let charIndex = 0;
   let isDeleting = false;
@@ -306,8 +316,8 @@ const dotObserver = new IntersectionObserver(
   (entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        entry.target.style.background = '#6366f1';
-        entry.target.style.boxShadow = '0 0 20px rgba(99, 102, 241, 0.5)';
+        entry.target.style.background = '#f97316';
+        entry.target.style.boxShadow = '0 0 20px rgba(249, 115, 22, 0.5)';
       }
     });
   },
