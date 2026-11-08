@@ -24,10 +24,10 @@ const translations = {
       ctaContact: 'Entrar em contato',
       scrollDown: 'Rolar para baixo',
       typedPhrases: [
-        'Desenvolvedor Java e Spring Boot',
-        'Com experiÊncia em C# e ASP.NET Core',
-        'Desenvolvedor de APIs REST',
-        'Full Stack Developer',
+        'Desenvolvedor Full Stack Java e C#',
+        'Com experiência na criação e consumo de APIs REST',
+        'Desenvolvimento web usando React e Angular',
+        'Experiência com testes unitários e automação de testes',
       ],
     },
     about: {
@@ -190,10 +190,10 @@ const translations = {
       ctaContact: 'Get in touch',
       scrollDown: 'Scroll down',
       typedPhrases: [
-        'Java & Spring Boot Developer',
-        'Experienced with C# & ASP.NET Core',
-        'REST API Developer',
-        'Full Stack Developer',
+        'Full Stack Java & C# Developer',
+        'Experienced in building and consuming REST APIs',
+        'Web development with React and Angular',
+        'Experienced in unit testing and test automation',
       ],
     },
     about: {

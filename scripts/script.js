@@ -30,30 +30,34 @@ function initTypingEffect() {
   const el = document.getElementById('typed-text');
   if (!el) return;
 
-  const phrases = [
-    'Desenvolvedor Full Stack Java e C#',
-    'Com experiência na criação e consumo de APIs REST',
-    'Desenvolvimento web usando React e Angular',
-    'Experiência com testes unitários e automação de testes',
-  ];
-
   const sizer = document.getElementById('typed-sizer');
-  if (sizer) {
-    sizer.innerHTML = '';
-    phrases.forEach(phrase => {
-      const span = document.createElement('span');
-      span.textContent = `${phrase}|`;
-      sizer.appendChild(span);
-    });
-  }
-
+  let phrases = [];
   let phraseIndex = 0;
   let charIndex = 0;
   let isDeleting = false;
-  let typeSpeed = 80;
+  let timer = null;
+
+  // Phrases come from i18n.js (hero.typedPhrases) for the current language.
+  function loadPhrases() {
+    const list = getTypedPhrases();
+    phrases = Array.isArray(list) ? list : [];
+
+    // Invisible copies of every phrase reserve the height of the longest one,
+    // so the content below doesn't shift while typing (see .typed-wrapper).
+    if (sizer) {
+      sizer.innerHTML = '';
+      phrases.forEach(phrase => {
+        const span = document.createElement('span');
+        span.textContent = `${phrase}|`;
+        sizer.appendChild(span);
+      });
+    }
+  }
 
   function type() {
+    if (!phrases.length) return;
     const current = phrases[phraseIndex];
+    let typeSpeed;
 
     if (isDeleting) {
       el.textContent = current.substring(0, charIndex - 1);
@@ -74,10 +78,21 @@ function initTypingEffect() {
       typeSpeed = 500;
     }
 
-    setTimeout(type, typeSpeed);
+    timer = setTimeout(type, typeSpeed);
   }
 
-  setTimeout(type, 1000);
+  function start(delay) {
+    clearTimeout(timer);
+    loadPhrases();
+    phraseIndex = 0;
+    charIndex = 0;
+    isDeleting = false;
+    el.textContent = '';
+    timer = setTimeout(type, delay);
+  }
+
+  registerTypingController({ restart: () => start(300) });
+  start(1000);
 }
 
 /* ===== Navbar Scroll Effect ===== */
